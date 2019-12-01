@@ -28,12 +28,13 @@ const mailOptions = {
   html: '<p>Hope nodemailer worked!</p>'// plain text body
 };
 
+/*
 transporter.sendMail(mailOptions, function (err, info) {
    if(err)
      console.log(err)
    else
      console.log(info);
-});
+});*/
 
 //>> Listens
 app.listen(port, ()=>{

@@ -1,0 +1,10 @@
+.mail-input {
+  display: block;
+  width: 256px;
+  margin: 4px auto;
+}
+
+#in-mail-submit {
+  display: block;
+  margin: 0 auto;
+}
