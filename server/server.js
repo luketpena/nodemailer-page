@@ -21,20 +21,27 @@ var transporter = nodemailer.createTransport({
     }
 });
 
-const mailOptions = {
-  from: 'sender@email.com', // sender address
-  to: 'luketpena@gmail.com', // list of receivers
-  subject: 'Subject of your email', // Subject line
-  html: '<p>Hope nodemailer worked!</p>'// plain text body
-};
 
-/*
-transporter.sendMail(mailOptions, function (err, info) {
-   if(err)
-     console.log(err)
-   else
-     console.log(info);
-});*/
+
+app.post('/mail',(req,res)=>{
+  const letter = req.body;
+
+  const mailOptions = {
+    from: letter.email, // sender address
+    to: 'luketpena@gmail.com', // list of receivers
+    subject: letter.subject, // Subject line
+    html: `<p>${letter.message}</p>`// plain text body
+  };
+
+  transporter.sendMail(mailOptions, function (err, info) {
+     if(err)
+       console.log(err)
+     else
+       console.log(info);
+  });
+});
+
+
 
 //>> Listens
 app.listen(port, ()=>{
