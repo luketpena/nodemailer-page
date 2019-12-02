@@ -13,13 +13,16 @@ app.use(express.static('./server/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //>> Nodemailer
-var transporter = nodemailer.createTransport({
+/*
+let transporter = nodemailer.createTransport({
  service: 'gmail',
  auth: {
         user: 'luketpena@gmail.com',
         pass: '@zgar0th'
     }
-});
+});*/
+let transporter = nodemailer.createTransport(options[, defaults])
+
 
 
 
@@ -33,7 +36,7 @@ app.post('/mail',(req,res)=>{
     html: `<p>${letter.message}</p>`// plain text body
   };
 
-  transporter.sendMail(mailOptions, function (err, info) {
+  transporter.sendMail(mailOptions, (err, info)=>{
      if(err)
        console.log(err)
      else

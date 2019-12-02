@@ -1,10 +1,44 @@
+body {
+  margin: 0;
+  background-color: snow;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 96px;
+}
+
 .mail-input {
   display: block;
   width: 256px;
   margin: 4px auto;
+  font-family: monospace;
+}
+
+#email-box {
+  width: 350px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, white 0%, white 90%, lightseagreen 90%, mediumspringgreen 100%);
+  padding: 32px;
+  box-shadow: 0 4px 8px 4px rgba(0,0,0,.3);
+  border-radius: 8px;
 }
 
 #in-mail-submit {
   display: block;
   margin: 0 auto;
+  font-family: monospace;
+  padding: 8px 16px;
+  border: 1px solid lightseagreen;
+  color: lightseagreen;
+  transition: all .2s;
+  font-size: 16px;
+}
+
+#in-mail-submit:hover {
+  color: white;
+  background-color: lightseagreen;
+  cursor: pointer;
+  padding: 8px 32px;
 }

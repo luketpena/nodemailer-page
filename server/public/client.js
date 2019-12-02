@@ -8,6 +8,7 @@ $(document).ready(()=>{
 
 function sendMail () {
   event.preventDefault();
+
   if (checkInputs()) {
     const newMessage = {
       name: $('#in-name').val(),
@@ -15,7 +16,7 @@ function sendMail () {
       email: $('#in-email').val(),
       message: $('#in-message').val()
     }
-
+    /*
     $.ajax({
       method: 'POST',
       url: '/mail',
@@ -25,7 +26,7 @@ function sendMail () {
       $('.mail-input').val('');
     }).catch(error=>{
       alert('There was a problem sending your message.');
-    })
+    })*/
   } else {
     alert('Please fill out your info and message!');
   }
@@ -35,5 +36,5 @@ function checkInputs () {
   return ($('#in-name').val()!=''
           && $('#in-subject').val()!=''
           && $('#in-email').val()!=''
-          && $('#in-mesage').val()!='');
+          && $('#in-message').val()!='');
 }
