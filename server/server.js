@@ -13,18 +13,15 @@ app.use(express.static('./server/public'));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 //>> Nodemailer
-/*
+
 let transporter = nodemailer.createTransport({
  service: 'gmail',
  auth: {
         user: 'luketpena@gmail.com',
         pass: '@zgar0th'
     }
-});*/
-let transporter = nodemailer.createTransport(options[, defaults])
-
-
-
+});
+//let transporter = nodemailer.createTransport(options[, defaults])
 
 app.post('/mail',(req,res)=>{
   const letter = req.body;
@@ -43,8 +40,6 @@ app.post('/mail',(req,res)=>{
        console.log(info);
   });
 });
-
-
 
 //>> Listens
 app.listen(port, ()=>{
